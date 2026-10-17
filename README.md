@@ -10,3 +10,7 @@ My first project in TripleTen's AI-Assisted Software Engineering program. It inc
 * HTML
 * CSS
 * JavaScript
+
+## Deployed Site
+
+Check out [Flash Cards] (https://passmorealissa-wq.github.io/ai-se_project_flashcards) on GitHub Pages.
