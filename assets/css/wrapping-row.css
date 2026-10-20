@@ -1,0 +1,11 @@
+.wrapping-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.wrapping-row__display-contents {
+  display: contents;
+}
