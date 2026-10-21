@@ -1,16 +1,16 @@
-.decks {
+.gallery {
   margin-top: 0;
   margin-bottom: 20px;
 }
 
-.decks__title {
+.gallery__title {
   margin-top: 0;
   margin-bottom: 40px;
   font-size: 40px;
   font-weight: 700;
 }
 
-.decks__list {
+.gallery__list {
   list-style-type: none;
   gap: 20px;
   margin: 0px;
@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-.decks__new-deck-btn {
+.gallery__new-card-btn {
   padding: 20px;
   box-sizing: border-box;
   display: flex;
@@ -37,7 +37,7 @@
   border: none;
 }
 
-.decks__new-deck-btn:hover {
+.gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
 }
