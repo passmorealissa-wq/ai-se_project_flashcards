@@ -27,7 +27,7 @@ const decks = [
       {
         id: 5,
         question: "What attribute is required on every <img> tag?",
-        answer: "alt â€” it provides alternative text describing the image",
+        answer: "alt - it provides alternative text describing the image",
       },
       {
         id: 6,
@@ -142,12 +142,12 @@ const decks = [
       {
         id: 23,
         question: "How do you select an element by its class in CSS?",
-        answer: "Use a dot followed by the class name â€” e.g., .classname",
+        answer: "Use a dot followed by the class name - e.g., .classname",
       },
       {
         id: 24,
         question: "How do you select an element by its ID in CSS?",
-        answer: "Use a hash followed by the ID â€” e.g., #idname",
+        answer: "Use a hash followed by the ID - e.g., #idname",
       },
       {
         id: 25,
@@ -174,7 +174,7 @@ const decks = [
         id: 29,
         question:
           "In the cascade, which selector takes priority: a class or an element selector?",
-        answer: "A class selector â€” it has higher specificity",
+        answer: "A class selector - it has higher specificity",
       },
       {
         id: 30,
@@ -223,7 +223,7 @@ const decks = [
         question:
           "What shorthand sets top, right, bottom, and left padding in one declaration?",
         answer:
-          "padding: top right bottom left â€” e.g., padding: 10px 20px 10px 20px",
+          "padding: top right bottom left - e.g., padding: 10px 20px 10px 20px",
       },
       {
         id: 37,
@@ -348,7 +348,7 @@ const decks = [
       {
         id: 56,
         question: 'What is the result of 5 + "3" in JavaScript?',
-        answer: '"53" â€” the number is coerced to a string and concatenated',
+        answer: '"53" - the number is coerced to a string and concatenated',
       },
       {
         id: 57,
@@ -403,7 +403,7 @@ const decks = [
         id: 65,
         question: "What is an arrow function?",
         answer:
-          "A concise function syntax using => â€” e.g., const add = (a, b) => a + b",
+          "A concise function syntax using => - e.g., const add = (a, b) => a + b",
       },
       {
         id: 66,
@@ -446,7 +446,7 @@ const decks = [
       {
         id: 71,
         question: "How do you access the first element of an array called arr?",
-        answer: "arr[0] â€” arrays are zero-indexed",
+        answer: "arr[0] - arrays are zero-indexed",
       },
       {
         id: 72,
@@ -606,7 +606,7 @@ const decks = [
         id: 97,
         question: "What does DNS stand for, and what does it do?",
         answer:
-          "Domain Name System â€” it translates domain names (e.g., google.com) into IP addresses",
+          "Domain Name System - it translates domain names (e.g., google.com) into IP addresses",
       },
       {
         id: 98,
@@ -624,7 +624,7 @@ const decks = [
         id: 100,
         question: "What is localhost?",
         answer:
-          "The loopback address (127.0.0.1) â€” it refers to your own computer",
+          "The loopback address (127.0.0.1) - it refers to your own computer",
       },
     ],
     color: "#ee92d7",
@@ -684,7 +684,7 @@ const decks = [
         question:
           "In the Elements tab, how can you temporarily change a CSS value to test it?",
         answer:
-          "Click the value in the Styles panel and type a new one â€” changes are live but not saved",
+          "Click the value in the Styles panel and type a new one - changes are live but not saved",
       },
       {
         id: 110,

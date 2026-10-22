@@ -55,34 +55,34 @@ return `${deck.name} · ${currentIndex + 1}/${deck.cards.length}`;
     updateArrows();
   }
 
-  rightBtn.addEventListener("click", () => {
+  rightBtn.onclick = () => {
     if (currentIndex < deck.cards.length - 1) {
       currentIndex++;
       showingQuestion = true;
       updateDisplay();
     }
-  });
+  };
 
-  leftBtn.addEventListener("click", () => {
+  leftBtn.onclick = () => {
     if (currentIndex > 0) {
       currentIndex--;
       showingQuestion = true;
       updateDisplay();
     }
-  });
+  };
 
-  flipBtn.addEventListener("click", () => {
-  showingQuestion = !showingQuestion;
-  if (showingQuestion === true) {
-    carouselText.textContent = currentCard.question;
-    cardEl.classList.remove("carousel__card_color_white");
-    cardEl.classList.add(`card__carousel_color_${hexToString(deck.color)}`);
-  } else {
-    carouselText.textContent = currentCard.answer;
-    removeColorClasses(cardEl);
-    cardEl.classList.add("carousel__card_color_white");
-  }
-});
+  flipBtn.onclick = () => {
+    showingQuestion = !showingQuestion;
+    if (showingQuestion === true) {
+      carouselText.textContent = currentCard.question;
+      cardEl.classList.remove("carousel__card_color_white");
+      cardEl.classList.add(`card__carousel_color_${hexToString(deck.color)}`);
+    } else {
+      carouselText.textContent = currentCard.answer;
+      removeColorClasses(cardEl);
+      cardEl.classList.add("carousel__card_color_white");
+    }
+  };
 
   updateDisplay();
 
