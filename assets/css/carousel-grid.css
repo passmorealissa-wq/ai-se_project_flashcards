@@ -1,0 +1,34 @@
+.carousel__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 3fr 1fr;
+  grid-template-areas:
+    "card card card"
+    "left-btn flip-btn right-btn"; 
+  align-items: center;
+  gap: 20px;
+}
+
+.carousel__card {
+  grid-area: card;
+  width: 100%;
+
+  
+}
+
+.carousel__btn_type_left {
+  grid-area: left-btn;
+  justify-self: center;
+}
+
+.carousel__btn_type_flip {
+  grid-area: flip-btn;
+  justify-self: center;
+  margin: 0;
+}
+
+.carousel__btn_type_right {
+  grid-area: right-btn;
+  justify-self: center;
+}
+

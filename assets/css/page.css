@@ -32,4 +32,9 @@
   .page__main-content {
     margin-top: 20px;
   }
+
+  .page__main-content_location_carousel {
+    margin-top: 146px;
+  }
 }
+
