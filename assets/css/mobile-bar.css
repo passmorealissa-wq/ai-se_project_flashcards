@@ -1,0 +1,51 @@
+@media screen and (max-width: 805px) {
+  .page {
+    padding-bottom: 0px;
+
+  }
+
+  /* Faded bar behind the fixed button */
+  .page::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 185px;
+    background: linear-gradient(to bottom, transparent 0%, #ececec 35%);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 20px;
+    z-index: 5;
+    margin-bottom: 20px;
+    
+   
+  }
+
+  .gallery__new-deck-btn {
+    position: fixed;
+    bottom: 65px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+    padding: 12px 20px;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 500;
+    background-color: #000;
+    color: #fff;
+    width: calc(100% - 40px);
+    max-width: 353px;
+    aspect-ratio: auto;
+    border-radius: 8px;
+    justify-content: center;
+    z-index: 4;
+  }
+  
+}

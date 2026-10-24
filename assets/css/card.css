@@ -23,8 +23,8 @@
 }
 
 .card {
-  width: 325px;
-  height: 205px;
+  width: 100%;
+  aspect-ratio: 325 / 205;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
