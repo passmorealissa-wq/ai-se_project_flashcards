@@ -1,5 +1,6 @@
 .carousel__grid {
   display: grid;
+  width: min(100%, 400px);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 3fr 1fr;
   grid-template-areas:
@@ -7,13 +8,6 @@
     "left-btn flip-btn right-btn"; 
   align-items: center;
   gap: 20px;
-}
-
-.carousel__card {
-  grid-area: card;
-  width: 100%;
-
-  
 }
 
 .carousel__btn_type_left {
@@ -31,4 +25,5 @@
   grid-area: right-btn;
   justify-self: center;
 }
+
 

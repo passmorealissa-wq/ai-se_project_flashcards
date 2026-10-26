@@ -23,6 +23,8 @@ function renderHomeView() {
   deckViewSection.style.display = "none";
   notFoundSection.style.display = "none";
   carouselSection.style.display = "none";
+  pageEl.classList.remove("page_no-mobile-bar");
+  homeSection.style.display = "block";
   mainContent.classList.remove("page__main-content_location_carousel");
 }
 

@@ -56,14 +56,14 @@
   }
   .gallery__practice-btn {
         background: #1A1A1A;
-        right: 20.5px;
-        width: calc(50% - 6px - 20.5px)
+        right: 30px;
+        
   }
 
   .gallery__new-card-btn {
         background: #CCCCCCCC;
         color: #1A1A1A 50%;
-        left: 20.5px;
+        left: 30px;
 
     }
 
@@ -76,26 +76,11 @@
         z-index: 4;
         box-sizing: border-box;
         aspect-ratio: 170 / 44;
-        
+        width: min(calc(50% - 6px - 30px), 170px);
         height: 44px;
         bottom: 65px;
     
     }
 
-    .gallery__new-card-btn {
-        background: #CCCCCCCC;
-        color: #1A1A1A 50%;
-        width: 170px;
-        left: 30px;
-
-    }
-
-    .gallery__practice-btn {
-        background: #1A1A1A;
-        right: 30px;
-        width: calc(50% - 6px - 30px);
-        max-width: 170px;
-        
-  }
 
 }

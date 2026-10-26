@@ -33,7 +33,10 @@
   border-radius: 20px;
   padding: 20px;
   position: relative;
-}
+  box-shadow: 1px -1px 2px 0px #00000040 inset,
+             -1px 2px 2px 0px #FFFFFFB2 inset,
+              0px 2px 8px 0px #0000001A;
+}   
 
 .card__title {
   font-weight: 700;
