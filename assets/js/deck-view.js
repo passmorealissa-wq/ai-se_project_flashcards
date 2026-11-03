@@ -6,6 +6,7 @@ function renderDeckView(deck) {
   const notFoundSection = document.querySelector("#not-found");
   const mainContent = document.querySelector(".page__main-content");
   const carouselSection = document.querySelector("#carousel");
+  const newDeckViewSection = document.querySelector("#new-deck-view");
   const cardsListEl = deckViewSection.querySelector(".gallery__list");
   const cardTemplateEl = document.querySelector("#card-template");
   const deckTitleEl = deckViewSection.querySelector(".gallery__title");

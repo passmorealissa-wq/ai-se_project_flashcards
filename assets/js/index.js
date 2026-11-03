@@ -13,18 +13,31 @@ const notFoundSection = document.querySelector("#not-found");
 const mainContent = document.querySelector(".page__main-content");
 const carouselSection = document.querySelector("#carousel");
 const pageEl = document.querySelector(".page");
+const newDeckViewSection = document.querySelector("#new-deck-view");
 
 const decksListEl = homeSection.querySelector(".gallery__list");
 const deckTemplateEl = document.querySelector("#deck-template");
 const practiceButtonEl = deckViewSection.querySelector(".gallery__practice-btn");
+const newDeckButtonEl = document.querySelector("#home .gallery__new-card-btn");
 
 function renderHomeView() {
   homeSection.style.display = "block";
   deckViewSection.style.display = "none";
   notFoundSection.style.display = "none";
   carouselSection.style.display = "none";
+  newDeckViewSection.style.display = "none";
   pageEl.classList.remove("page_no-mobile-bar");
   homeSection.style.display = "block";
+  mainContent.classList.remove("page__main-content_location_carousel");
+}
+
+function renderNewDeckView() {
+  newDeckViewSection.style.display = "block";
+  homeSection.style.display = "none";
+  deckViewSection.style.display = "none";
+  carouselSection.style.display = "none";
+  notFoundSection.style.display = "none";
+  pageEl.classList.remove("page_no-mobile-bar");
   mainContent.classList.remove("page__main-content_location_carousel");
 }
 
@@ -33,6 +46,7 @@ function renderNotFoundView() {
   deckViewSection.style.display = "none";
   notFoundSection.style.display = "block";
   carouselSection.style.display = "none";
+  newDeckViewSection.style.display = "none";
   mainContent.classList.remove("page__main-content_location_carousel");
 }
 
@@ -41,6 +55,11 @@ function router() {
 
   if (route === "" || route === "home") {
     renderHomeView();
+    return;
+  }
+
+  if (route === "new-deck-view") {
+    renderNewDeckView();
     return;
   }
 
@@ -55,6 +74,7 @@ function router() {
     deckViewSection.style.display = "block";
     notFoundSection.style.display = "none";
     carouselSection.style.display = "none";
+    newDeckViewSection.style.display = "none";
     pageEl.classList.remove("page_no-mobile-bar");
     mainContent.classList.remove("page__main-content_location_carousel");
     renderDeckView(deck);
@@ -63,6 +83,7 @@ function router() {
     homeSection.style.display = "none";
     deckViewSection.style.display = "none";
     notFoundSection.style.display = "none";
+    newDeckViewSection.style.display = "none";
     carouselSection.style.display = "flex";
     carouselSection.scrollIntoView({ behavior: "smooth" });
     pageEl.classList.add("page_no-mobile-bar");
@@ -86,6 +107,12 @@ practiceButtonEl.addEventListener("click", () => {
     window.location.hash = `carousel/${deckID}`;
   }
 });
+
+newDeckButtonEl.addEventListener("click", () => {
+  window.location.hash = "new-deck-view";
+});
+
+
 
 function createDeckEl(item) {
     const deckEl = deckTemplateEl.content.cloneNode(true);
