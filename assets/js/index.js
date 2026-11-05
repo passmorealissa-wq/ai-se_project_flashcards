@@ -6,6 +6,7 @@ import { renderCarouselView } from "./carousel.js";
 
 import { renderDeckView } from "./deck-view.js";
 
+import { disableSubmitBtn } from "./new-deck-view.js";
 
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
@@ -60,6 +61,7 @@ function router() {
 
   if (route === "new-deck-view") {
     renderNewDeckView();
+    disableSubmitBtn();
     return;
   }
 
