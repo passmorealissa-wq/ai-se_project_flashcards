@@ -199,7 +199,8 @@
           </label>
           </div>
 
-          <label class="new-deck-view__text_title">Write the JSON array of cards so that it matches this schema
+          <label class="new-deck-view__text_title">
+            Write the JSON array of cards so that it matches this schema
             <textarea 
             class="new-deck-view__text"
             name="deck-text" 
@@ -232,5 +233,14 @@
       <p class="footer__text">&copy;2026 Alissa Passmore</p>
     </footer>
     <script src="./assets/js/index.js" type="module"></script>
+
+    <div class="modal" id="error-modal">
+      <div class="modal__content">
+        <h2 class="modal__title">An error has occurred</h2>
+        <p class="modal__error"></p>
+        <button class="modal__close" type="button">Dismiss</button>
+      </div>
+    </div>
+
   </body>
 </html>
