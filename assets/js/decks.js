@@ -1,4 +1,4 @@
-const fetchedDecks = [];
+let fetchedDecks = [];
 
 const decks = [
   {

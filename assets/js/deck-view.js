@@ -1,5 +1,7 @@
 import { hexToString } from "./colors.js";
 
+import { fetchedDecks } from "./decks.js";
+
 function renderDeckView(deck) {
   const homeSection = document.querySelector("#home");
   const deckViewSection = document.querySelector("#deck-view");

@@ -17,4 +17,9 @@ const headers = {
   Authorization: "01a1d0fa-f9f0-7078-90a5-1a2b1be94935",
 };
 
-export { getDecks };
+function deleteDeck(deckId) {
+        return fetch(`${baseUrl}/decks/${deckId}`, 
+            { headers, method: "DELETE" }).then(processResponse);
+}
+
+export { getDecks, deleteDeck };

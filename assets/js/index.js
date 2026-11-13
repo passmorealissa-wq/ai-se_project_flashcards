@@ -8,7 +8,8 @@ import { renderDeckView } from "./deck-view.js";
 
 import { disableSubmitBtn, showError } from "./new-deck-view.js";
 
-import { getDecks } from "./api.js";
+import { getDecks, deleteDeck } from "./api.js";
+
 
 
 const homeSection = document.querySelector("#home");
@@ -139,7 +140,12 @@ function createDeckEl(item) {
     
     const deleteBtnEl = deckEl.querySelector(".card__delete-btn");
     deleteBtnEl.addEventListener("click", () => {
-        deleteBtnEl.closest(".card").remove(); });
+      deleteDeck(item._id).then(() => {
+      deleteBtnEl.closest(".card").remove();
+      fetchedDecks = fetchedDecks.filter((deck) => deck._id !== item._id);
+      });  
+});
+    
 
     const deckLinkEl = deckEl.querySelector(".card__link");
     deckLinkEl.href = `#deck/${item._id}`;
