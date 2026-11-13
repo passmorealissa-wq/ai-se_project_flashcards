@@ -13,7 +13,7 @@ function renderDeckView(deck) {
 
 
   deckTitleEl.textContent = deck.name;
-  deckViewSection.dataset.deckId = deck.id;
+  deckViewSection.dataset.deckId = deck._id;
   cardsListEl.querySelectorAll(".card").forEach((cardEl) => cardEl.remove());
 
   const colorName = hexToString(deck.color);

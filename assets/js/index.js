@@ -1,4 +1,4 @@
-import { decks, getDeckByID } from "./decks.js";
+import { decks, getDeckByID, fetchedDecks } from "./decks.js";
 
 import { hexToString } from "./colors.js";
 
@@ -6,11 +6,10 @@ import { renderCarouselView } from "./carousel.js";
 
 import { renderDeckView } from "./deck-view.js";
 
-import { disableSubmitBtn } from "./new-deck-view.js";
+import { disableSubmitBtn, showError } from "./new-deck-view.js";
 
 import { getDecks } from "./api.js";
 
-import { showError } from "./new-deck-view.js";
 
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
@@ -107,7 +106,8 @@ function router() {
 window.addEventListener("DOMContentLoaded", () => {
   getDecks()
   .then((decks) => {
-    decks.forEach(renderDeckEl);
+    decks.forEach(renderDeckEl)
+     fetchedDecks.push(...decks);
   })
   .catch((err) => {
     showError(err);
@@ -142,7 +142,7 @@ function createDeckEl(item) {
         deleteBtnEl.closest(".card").remove(); });
 
     const deckLinkEl = deckEl.querySelector(".card__link");
-    deckLinkEl.href = `#deck/${item.id}`;
+    deckLinkEl.href = `#deck/${item._id}`;
 
     const colorName = hexToString(item.color);   
     const colorClass = `card_color_${colorName}`;
