@@ -22,4 +22,12 @@ function deleteDeck(deckId) {
             { headers, method: "DELETE" }).then(processResponse);
 }
 
-export { getDecks, deleteDeck };
+function addDeck(deckData) {
+    return fetch(`${baseUrl}/decks`, {
+        headers,
+        method: "POST",
+        body: JSON.stringify(deckData)
+    }).then(processResponse);
+}
+
+export { getDecks, deleteDeck, addDeck };

@@ -1,5 +1,7 @@
 
 import { decks, getDeckByID } from "./decks.js";
+import { fetchedDecks } from "./decks.js";
+import { addDeck } from "./api.js";
 
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 const formEl = document.querySelector("#new-deck-form");
@@ -102,10 +104,11 @@ formEl.addEventListener("submit", function(e) {
             }
         }
 
-    const slug = `${slugify(name)}-${Date.now()}`;
-    
-    decks.push({ id: slug, color, name, cards: jsonData.cards });
-    window.location.hash = "deck/" + slug;
+    addDeck({ color, name, cards: jsonData.cards })
+    .then((newDeck) => {
+        fetchedDecks.push(newDeck);
+        window.location.hash = "deck/" + newDeck._id;
+    })
 
 });
 
