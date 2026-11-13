@@ -108,3 +108,5 @@ formEl.addEventListener("submit", function(e) {
     window.location.hash = "deck/" + slug;
 
 });
+
+export { showError };

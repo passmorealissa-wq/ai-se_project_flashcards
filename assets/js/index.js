@@ -8,6 +8,10 @@ import { renderDeckView } from "./deck-view.js";
 
 import { disableSubmitBtn } from "./new-deck-view.js";
 
+import { getDecks } from "./api.js";
+
+import { showError } from "./new-deck-view.js";
+
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const notFoundSection = document.querySelector("#not-found");
@@ -100,7 +104,19 @@ function router() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", router);
+window.addEventListener("DOMContentLoaded", () => {
+  getDecks()
+  .then((decks) => {
+    decks.forEach(renderDeckEl);
+  })
+  .catch((err) => {
+    showError(err);
+  })
+  .finally(() => {
+    router();
+  })
+});
+
 window.addEventListener("hashchange", router);
 
 practiceButtonEl.addEventListener("click", () => {
@@ -142,4 +158,4 @@ function renderDeckEl(item) {
  decksListEl.append(deckEl);
 }
 
- decks.forEach(renderDeckEl);
+
