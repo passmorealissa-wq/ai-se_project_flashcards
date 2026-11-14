@@ -67,8 +67,8 @@ function renderNewDeckView() {
   carouselSection.style.display = "none";
   aboutSection.style.display = "none";
   notFoundSection.style.display = "none";
-  pageEl.classList.remove("page_no-mobile-bar");
   mainContent.classList.remove("page__main-content_location_carousel");
+  pageEl.classList.add("page_no-mobile-bar");
 }
 
 /**

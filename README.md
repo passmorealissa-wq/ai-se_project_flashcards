@@ -27,6 +27,11 @@ My first project in TripleTen's AI-Assisted Software Engineering program. It inc
 * Implemented the responsive design for the deck view and the carousel view
 * Implemented card and button designs based on the Figma file provided
 
+## Updates Made in Part 6
+* The New Deck View was created
+* Color picker feature added
+* Card textarea created to receive card information in JSON array
+
 ## Project Pitch Video
 
 Check out this video (https://drive.google.com/file/d/1Mq9nDBhl7tU6HjYEQ3V0Cl5UcUwu-zDw/view?usp=sharing), where I describe my project and some of the challenges I faced while building it.
