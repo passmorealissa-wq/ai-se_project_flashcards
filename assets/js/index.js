@@ -19,7 +19,7 @@ const mainContent = document.querySelector(".page__main-content");
 const carouselSection = document.querySelector("#carousel");
 const pageEl = document.querySelector(".page");
 const newDeckViewSection = document.querySelector("#new-deck-view");
-
+const aboutSection = document.querySelector("#about");
 const decksListEl = homeSection.querySelector(".gallery__list");
 const deckTemplateEl = document.querySelector("#deck-template");
 const practiceButtonEl = deckViewSection.querySelector(".gallery__practice-btn");
@@ -31,8 +31,8 @@ function renderHomeView() {
   notFoundSection.style.display = "none";
   carouselSection.style.display = "none";
   newDeckViewSection.style.display = "none";
+  aboutSection.style.display = "none";
   pageEl.classList.remove("page_no-mobile-bar");
-  homeSection.style.display = "block";
   mainContent.classList.remove("page__main-content_location_carousel");
 }
 
@@ -41,6 +41,18 @@ function renderNewDeckView() {
   homeSection.style.display = "none";
   deckViewSection.style.display = "none";
   carouselSection.style.display = "none";
+  aboutSection.style.display = "none";
+  notFoundSection.style.display = "none";
+  pageEl.classList.remove("page_no-mobile-bar");
+  mainContent.classList.remove("page__main-content_location_carousel");
+}
+
+function renderAboutView() {
+ newDeckViewSection.style.display = "none";
+  homeSection.style.display = "none";
+  deckViewSection.style.display = "none";
+  carouselSection.style.display = "none";
+  aboutSection.style.display = "block";
   notFoundSection.style.display = "none";
   pageEl.classList.remove("page_no-mobile-bar");
   mainContent.classList.remove("page__main-content_location_carousel");
@@ -49,9 +61,11 @@ function renderNewDeckView() {
 function renderNotFoundView() {
   homeSection.style.display = "none";
   deckViewSection.style.display = "none";
+  aboutSection.style.display = "none";
   notFoundSection.style.display = "block";
   carouselSection.style.display = "none";
   newDeckViewSection.style.display = "none";
+  
   mainContent.classList.remove("page__main-content_location_carousel");
 }
 
@@ -69,6 +83,11 @@ function router() {
     return;
   }
 
+  if (route === "about") {
+    renderAboutView();
+    return;
+  }
+
   const deck = getDeckByID(deckID);
   if (!deck) {
     renderNotFoundView();
@@ -81,6 +100,7 @@ function router() {
     notFoundSection.style.display = "none";
     carouselSection.style.display = "none";
     newDeckViewSection.style.display = "none";
+    aboutSection.style.display = "none";
     pageEl.classList.remove("page_no-mobile-bar");
     mainContent.classList.remove("page__main-content_location_carousel");
     renderDeckView(deck);
@@ -90,6 +110,7 @@ function router() {
     deckViewSection.style.display = "none";
     notFoundSection.style.display = "none";
     newDeckViewSection.style.display = "none";
+    aboutSection.style.display = "none";
     carouselSection.style.display = "flex";
     carouselSection.scrollIntoView({ behavior: "smooth" });
     pageEl.classList.add("page_no-mobile-bar");

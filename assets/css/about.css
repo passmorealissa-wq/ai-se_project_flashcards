@@ -1,0 +1,13 @@
+.about__code {
+  background-color: rgb(30 30 30);
+  color: rgb(220 220 220);
+  padding: 16px 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.about__code code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+}
