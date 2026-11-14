@@ -1,5 +1,5 @@
 
-import { decks, getDeckByID } from "./decks.js";
+
 import { fetchedDecks } from "./decks.js";
 import { addDeck } from "./api.js";
 

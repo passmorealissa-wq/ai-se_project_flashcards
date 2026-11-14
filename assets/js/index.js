@@ -1,4 +1,4 @@
-import { decks, getDeckByID, fetchedDecks } from "./decks.js";
+import { getDeckByID, fetchedDecks } from "./decks.js";
 
 import { hexToString } from "./colors.js";
 
@@ -142,7 +142,8 @@ function createDeckEl(item) {
     deleteBtnEl.addEventListener("click", () => {
       deleteDeck(item._id).then(() => {
       deleteBtnEl.closest(".card").remove();
-      fetchedDecks = fetchedDecks.filter((deck) => deck._id !== item._id);
+      const index = fetchedDecks.findIndex((deck) => deck._id === item._id);
+      if (index !== -1) fetchedDecks.splice(index, 1);
       });  
 });
     
