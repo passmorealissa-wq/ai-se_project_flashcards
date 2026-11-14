@@ -1,5 +1,24 @@
 import { hexToString, removeColorClasses } from "./colors.js";
 
+/**
+ * @typedef {Object} Flashcard
+ * @property {string} question
+ * @property {string} answer
+ */
+
+/**
+ * @typedef {Object} Deck
+ * @property {string} name
+ * @property {string} color
+ * @property {Flashcard[]} cards
+ */
+
+/**
+ * Renders an interactive flashcard carousel for a deck.
+ *
+ * @param {Deck} deck - The deck whose cards appear in the carousel.
+ * @returns {void}
+ */
 function renderCarouselView(deck) {
    
 
@@ -16,15 +35,33 @@ function renderCarouselView(deck) {
   const flipBtn = carouselEl.querySelector(".carousel__btn_type_flip");
 
 
+  /**
+   * Disables a carousel navigation button.
+   *
+   * @param {HTMLButtonElement} buttonEl - The button to disable.
+   * @returns {void}
+   */
   function disableButton(buttonEl) {
     buttonEl.classList.add("carousel__btn_disabled");
     buttonEl.disabled = true;
   }
+
+  /**
+   * Enables a carousel navigation button.
+   *
+   * @param {HTMLButtonElement} buttonEl - The button to enable.
+   * @returns {void}
+   */
   function enableButton(buttonEl) {
     buttonEl.classList.remove("carousel__btn_disabled");
     buttonEl.removeAttribute("disabled");
   }
 
+  /**
+   * Updates the disabled state of the carousel navigation arrows.
+   *
+   * @returns {void}
+   */
   function updateArrows() {
     if (currentIndex === 0) {
       disableButton(leftBtn);
@@ -39,11 +76,23 @@ function renderCarouselView(deck) {
     }
   }
 
- function getCarouselTitleString(deck, currentIndex) {
+   /**
+    * Builds the carousel heading with the deck name and current card position.
+    *
+    * @param {Deck} deck - The deck being practiced.
+    * @param {number} currentIndex - The zero-based index of the displayed card.
+    * @returns {string} The heading text.
+    */
+  function getCarouselTitleString(deck, currentIndex) {
 return `${deck.name} · ${currentIndex + 1}/${deck.cards.length}`;
 }
 
-  function updateDisplay() {
+   /**
+    * Refreshes the displayed question, deck color, and navigation state.
+    *
+    * @returns {void}
+    */
+   function updateDisplay() {
     currentCard = deck.cards[currentIndex];
     carouselText.textContent = currentCard.question;
     sectionTitleEl.textContent = getCarouselTitleString(deck, currentIndex);
@@ -55,7 +104,12 @@ return `${deck.name} · ${currentIndex + 1}/${deck.cards.length}`;
     updateArrows();
   }
 
-  rightBtn.onclick = () => {
+  rightBtn.onclick = /**
+   * Advances to the next card when one is available.
+   *
+   * @returns {void}
+   */
+  () => {
     if (currentIndex < deck.cards.length - 1) {
       currentIndex++;
       showingQuestion = true;
@@ -63,7 +117,12 @@ return `${deck.name} · ${currentIndex + 1}/${deck.cards.length}`;
     }
   };
 
-  leftBtn.onclick = () => {
+  leftBtn.onclick = /**
+   * Moves to the previous card when one is available.
+   *
+   * @returns {void}
+   */
+  () => {
     if (currentIndex > 0) {
       currentIndex--;
       showingQuestion = true;
@@ -71,7 +130,12 @@ return `${deck.name} · ${currentIndex + 1}/${deck.cards.length}`;
     }
   };
 
-  flipBtn.onclick = () => {
+  flipBtn.onclick = /**
+   * Toggles the current carousel card between its question and answer.
+   *
+   * @returns {void}
+   */
+  () => {
     showingQuestion = !showingQuestion;
     if (showingQuestion === true) {
       carouselText.textContent = currentCard.question;

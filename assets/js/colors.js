@@ -9,12 +9,11 @@
     };
 
 /**
- * Returns a hexadecimal string corresponding to the provided color name
- * string. If it isn't found in the colorMap object, colorMap.default is
- * returned.
+ * Returns the hex value for a named color, or the default hex value if the
+ * name is not in the color map.
  *
- * @param {string} colorName
- * @returns a hexadecimal string
+ * @param {string} colorName - The color-map key to look up.
+ * @returns {string} The corresponding hexadecimal color.
  */
 function stringToHex(colorName) {
   const color = colorMap[colorName];
@@ -23,32 +22,45 @@ function stringToHex(colorName) {
 }
 
 /**
- * Accepts a hexadecimal string and returns the corresponding color name key,
- * if found in colorMap. If a match isn't found, null is returned.
+ * Finds the color-map key whose value matches a hexadecimal color.
  *
- * @param {string} hexValue
- * @returns a color name string
+ * @param {string} hexValue - The hexadecimal color to look up.
+ * @returns {string|null} The matching color name, or null if none matches.
  */
 function hexToString(hexValue) {
-  const colorString = Object.keys(colorMap).find((key) => {
-    return colorMap[key] === hexValue;
-  });
+  const colorString = Object.keys(colorMap).find(
+    /**
+     * Checks whether a color-map entry matches the supplied hex value.
+     *
+     * @param {string} key - The color-map key to inspect.
+     * @returns {boolean} Whether the entry has the supplied hex value.
+     */
+    (key) => colorMap[key] === hexValue,
+  );
 
   return colorString || null;
 }
 
 /**
- * Accepts an HTML element and removes all BEM "_color_" modifiers from its
- * class list.
+ * Removes all BEM "_color_" modifier classes from an element.
  *
- * @param {HTMLElement} element
+ * @param {HTMLElement} element - The element whose color classes are removed.
+ * @returns {void}
  */
 function removeColorClasses(element) {
-  [...element.classList].forEach((cls) => {
-    if (cls.includes("_color_")) {
-      element.classList.remove(cls);
-    }
-  });
+  [...element.classList].forEach(
+    /**
+     * Removes a class when it is a color modifier.
+     *
+     * @param {string} cls - The class name to inspect.
+     * @returns {void}
+     */
+    (cls) => {
+      if (cls.includes("_color_")) {
+        element.classList.remove(cls);
+      }
+    },
+  );
 }
 
 export { stringToHex, hexToString, removeColorClasses };

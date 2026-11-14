@@ -64,6 +64,10 @@
         background: #CCCCCCCC;
         color: #1A1A1A 50%;
         left: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-inline: 8px;
 
     }
 
