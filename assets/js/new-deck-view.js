@@ -29,7 +29,9 @@ export function disableSubmitBtn() {
 
 }
 
-errorModalCloseBtnEl.addEventListener("click", /**
+errorModalCloseBtnEl.addEventListener("click", 
+    
+ /**
  * Closes the error modal.
  *
  * @returns {void}
