@@ -1,5 +1,3 @@
-
-
 import { fetchedDecks } from "./decks.js";
 import { addDeck } from "./api.js";
 
@@ -79,20 +77,6 @@ function parseJSON(jsonString) {
   }
 }
 
-/**
- * Converts a string to a URL-safe slug: lowercase with non-alphanumeric runs
- * replaced by a single hyphen and no leading or trailing hyphens.
- *
- * @param {string} str - The input string.
- * @returns {string} The URL-safe slug.
- */
-  export function slugify(str) {
-  return str
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /**
  * Normalizes a hex color to lowercase with a leading "#" and uses the default
@@ -108,7 +92,9 @@ if (!HEX_DIGITS.test(hex)) return "#64d583";
 return "#" + hex.toLowerCase();
 }
 
-formEl.addEventListener("submit", /**
+formEl.addEventListener("submit", 
+  
+/**
  * Validates the new-deck form and submits the deck to the API.
  *
  * @param {SubmitEvent} e - The form submission event.
@@ -147,20 +133,22 @@ function(e) {
             }
         }
 
-    addDeck({ color, name, cards: jsonData.cards })
-    .then(
-      /**
-       * Adds the created deck to the local collection and opens its view.
-       *
-       * @param {CreatedDeck} newDeck - The deck returned by the API.
-       * @returns {void}
-       */
-      (newDeck) => {
-        fetchedDecks.push(newDeck);
-        window.location.hash = "deck/" + newDeck._id;
-      },
-    );
+   /**
+    * Adds the created deck to the local collection and opens its view.
+    *
+    * @param {CreatedDeck} newDeck - The deck returned by the API.
+    * @returns {void}
+    */
 
-});
+    addDeck({ color, name, cards: jsonData.cards })
+    .then((newDeck) => {
+    fetchedDecks.push(newDeck);
+    window.location.hash = "deck/" + newDeck._id;
+   })
+    .catch((error) => {
+      showError("Failed to add deck:" + error);
+    },
+    );
+  });
 
 export { showError };
